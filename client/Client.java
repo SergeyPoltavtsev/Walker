@@ -109,7 +109,6 @@ public class Client {
 		 * Compute the next command for the agent.
 		 */
 		public Command act() {		
-			
 			if(world.getNumberOfUncompletedGoals() == 0) {
 				return NoOp;
 			}
@@ -128,6 +127,8 @@ public class Client {
 			SubIntention delegatedSubIntention = null;
 			//Is there some job in the world, which this agent can solve.
 			if(plan == null || plan.isEmpty()) {
+				Logger.logLine("HELLOHELLO HELLO HELLO");
+				
 				delegatedSubIntention = world.popJob(this);
 			
 				//Make sure an agent has an intention.
